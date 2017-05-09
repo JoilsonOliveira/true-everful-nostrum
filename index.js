@@ -8,8 +8,6 @@ const ITEMS_NOSTRUM = [152898, 184659, 201005], // EU, NA, RU
 const sysmsg = require('tera-data-parser').sysmsg
 
 module.exports = function TrueEverfulNostrum(dispatch) {
-	const sysmsgMap = sysmsg.maps.get(dispatch.base.protocolVersion)
-
 	let cid = null,
 		slot = -1,
 		timeout = null,
@@ -31,7 +29,7 @@ module.exports = function TrueEverfulNostrum(dispatch) {
 	if(HIDE_MESSAGE)
 		dispatch.hook('S_SYSTEM_MESSAGE', 1, event => {
 			let msg = event.message.split('\x0b'),
-				type = msg[0].startsWith('@') ? sysmsgMap.code.get(msg[0].slice(1)) : ''
+				type = msg[0].startsWith('@') ? sysmsg.maps.get(dispatch.base.protocolVersion).code.get(msg[0].slice(1)) : ''
 
 			if(type == 'SMT_ITEM_USED' || type == 'SMT_CANT_USE_ITEM_COOLTIME') {
 				let obj = {}
