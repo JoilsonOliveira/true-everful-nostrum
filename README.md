@@ -1,0 +1,1 @@
+Ensures that your Elite/Tera Club Everful Nostrum is up 100% of the time.
