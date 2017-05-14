@@ -53,7 +53,7 @@ module.exports = function TrueEverfulNostrum(dispatch) {
 			}
 	})
 
-	dispatch.hook('S_ABNORMALITY_BEGIN', 1, abnormality.bind(null, 'S_ABNORMALITY_BEGIN'))
+	dispatch.hook('S_ABNORMALITY_BEGIN', 2, abnormality.bind(null, 'S_ABNORMALITY_BEGIN'))
 	dispatch.hook('S_ABNORMALITY_REFRESH', 1, abnormality.bind(null, 'S_ABNORMALITY_REFRESH'))
 	dispatch.hook('S_ABNORMALITY_END', 1, abnormality.bind(null, 'S_ABNORMALITY_END'))
 
